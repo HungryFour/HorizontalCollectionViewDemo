@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WJMCollectionViewFlowLayout.h
 //  HorizontalCollectionView
 //
 //  Created by WJM on 16/3/10.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface WJMCollectionViewFlowLayout : UICollectionViewFlowLayout
 
 
 @end
-

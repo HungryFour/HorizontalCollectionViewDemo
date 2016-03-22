@@ -8,9 +8,26 @@
 
 #import "WJMCollectionViewFlowLayout.h"
 #define zoomScale (1.08-1)
+#define ksMainWidth [UIScreen mainScreen].bounds.size.width
+#define ksMainHeight [UIScreen mainScreen].bounds.size.height
+
+@interface WJMCollectionViewFlowLayout ()
+{
+    NSInteger index;
+}
+@end
 
 @implementation WJMCollectionViewFlowLayout
 
+-(instancetype)init
+{
+    self = [super init];
+    if (self) {
+        index = 0;
+        self.isAlpha = NO;
+    }
+    return self;
+}
 //第一个
 - (void)prepareLayout
 {
@@ -42,22 +59,26 @@
         CGFloat dela =fabs(centerX -leftdelta);
         
         //4.左边的item缩小
-        // CGFloat leftscale =dela/centerX;
         CGFloat rightscale =1.00-dela/centerX;
         
         //5.缩放
         atts.transform =CGAffineTransformMakeScale(1+rightscale *zoomScale  , 1+rightscale *zoomScale);
         
-        CGFloat dela1 =fabs(leftdelta -centerX);
-        CGFloat rightscale1 =1.00-dela1/centerX;
-
-        if (rightscale1 < 0.5) {
-            atts.alpha = 0.5;
-        }else if(rightscale1 >0.99){
-            atts.alpha = 1;
-        }else{
-            atts.alpha = rightscale1;
+        //6.加透明度
+        if (self.isAlpha) {
+            
+            CGFloat dela1 =fabs(leftdelta -centerX);
+            CGFloat rightscale1 =1.00-dela1/centerX;
+            
+            if (rightscale1 < 0.5) {
+                atts.alpha = 0.5;
+            }else if(rightscale1 >0.99){
+                atts.alpha = 1;
+            }else{
+                atts.alpha = rightscale1;
+            }
         }
+        
         
     }
     NSArray * attributes = [[NSArray alloc] initWithArray:original copyItems:YES];
@@ -68,6 +89,33 @@
 //滚动的时候一直调用（相当于滚动间监听）
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds;
 {
+    CGPoint pInView = [self.collectionView.superview convertPoint:self.collectionView.center toView:self.collectionView];
+    // 获取中间cell的indexPath
+    NSIndexPath *indexPathNow = [self.collectionView indexPathForItemAtPoint:pInView];
+    
+    if (self.collectionView.contentSize.width-self.itemSize.width<newBounds.origin.x) {
+        
+        NSLog(@"下一页");
+        
+    }
+    if (indexPathNow.row == 0) {
+        if (newBounds.origin.x<ksMainWidth/2) {
+            if (index != indexPathNow.row) {
+                index = 0;
+                if (self.delegate && [self.delegate respondsToSelector:@selector(collectionViewDidScrollowTo:)]) {
+                    [self.delegate collectionViewDidScrollowTo:index];
+                }
+            }
+        }
+    }else{
+        if (index != indexPathNow.row) {
+            index = indexPathNow.row;
+            if (self.delegate && [self.delegate respondsToSelector:@selector(collectionViewDidScrollowTo:)]) {
+                [self.delegate collectionViewDidScrollowTo:index];
+            }
+        }
+    }
+    
     [super shouldInvalidateLayoutForBoundsChange:newBounds];
     return YES;
 }

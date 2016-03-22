@@ -45,7 +45,6 @@
         //UIcollectionView的高度为ksMainHeight-别的控件加空白的高度  减的数越大 图片越小
         CGFloat collectionVHeight = ksMainHeight-260;
         CGFloat imgWidth = collectionVHeight/zoomScale*imageScale;
-        
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, imgWidth, collectionVHeight/zoomScale)];
         _imageView.center = self.contentView.center;
         _imageView.contentMode = UIViewContentModeScaleToFill;
@@ -54,19 +53,4 @@
     }
     return _imageView;
 }
--(UILabel *)tipLable
-{
-    if (!_tipLable) {
-        _tipLable = [[UILabel alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/1.15+20, self.imageView.center.y-50, 15, 100)];
-        _tipLable.text = @"左滑进入动态";
-        _tipLable.textAlignment = NSTextAlignmentCenter;
-        _tipLable.numberOfLines = 0;
-        _tipLable.backgroundColor = [UIColor clearColor];
-        _tipLable.textColor = [UIColor lightGrayColor];
-        _tipLable.font = [UIFont systemFontOfSize:12];
-        _tipLable.hidden = YES;
-    }
-    return _tipLable;
-}
-
 @end

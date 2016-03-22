@@ -22,13 +22,9 @@
 #define lineSpacing 20.00f //itme 间隔
 #define zoomScale 1.08 //缩放比例
 
-@interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,WJMCollectionViewFlowLayoutDelegate>
 {
     NSMutableArray *dataArray;
-    //根据ScrollView滑动距离判断滑动到哪个index
-    NSInteger index;
-    //滑动比例 滑动百分之多少之后 改变下方的title 默认为0.5
-    CGFloat scrollScale;
     //collectionView高度
     CGFloat collectionVHeight;
     
@@ -45,9 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    index = 0;
-    scrollScale = 0.50f;
-    count = 50;
+    count = 5;
     
     //UIcollectionView的高度为ksMainHeight-别的控件加空白的高度  减的数越大 图片越小
     collectionVHeight = ksMainHeight-260;
@@ -79,6 +73,8 @@
         //1.1.布局item,设置item的大小
         //放大后的item会放大zoomScale倍  所以此处需计算
         flow.itemSize = CGSizeMake(collectionVHeight/zoomScale*imageScale, collectionVHeight/zoomScale);
+        flow.isAlpha = YES;
+        flow.delegate = self;
         //1.2.设置item的间距离
         flow.minimumLineSpacing = lineSpacing;
         //1.3 设置距离左边的距离
@@ -131,7 +127,6 @@
 {
     static NSString * CellIdentifier = @"UICollectionViewCell";
     WJMCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
     DataModel * model = [dataArray safetyObjectAtIndex:indexPath.row];
     cell.imageView.image=[UIImage imageNamed:model.img];
 
@@ -145,41 +140,6 @@
 {
     return dataArray.count;
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    int a = (int)(scrollView.contentOffset.x/(collectionVHeight/zoomScale*imageScale+lineSpacing)+scrollScale);
-    
-    //60 是滑动60的距离后 翻篇
-    if (scrollView.contentOffset.x-60 > (collectionVHeight/zoomScale*imageScale+lineSpacing)*(dataArray.count-1)) {
-        NSLog(@"左滑进入下一页");
-    }
-    if (index != a) {
-        if (a < 0) {
-            a = 0;
-        }
-        index = a;
-        if (index <= dataArray.count-1) {
-            [self labelText:index];
-        }else{
-            //NSLog(@"翻篇");
-        }
-    }
-}
-- (void)labelText:(NSInteger)dex
-{
-    DataModel * model = [dataArray safetyObjectAtIndex:dex];
-    if (![self.titleLabel.text isEqualToString:model.title]) {
-        self.titleLabel.text = model.title;
-    }
-    if (![self.decLabel.text isEqualToString:model.dec]) {
-        
-        NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:model.dec];
-        NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        [paragraphStyle setLineSpacing:2];//行距
-        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [model.dec length])];
-        [self.decLabel setAttributedText:attributedString];
-    }
-}
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGPoint pInView = [self.view convertPoint:collectionView.center toView:collectionView];
@@ -192,6 +152,21 @@
         
     }else{
         [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    }
+}
+#pragma mark - WJMCollectionViewFlowLayoutDelegate
+- (void)collectionViewDidScrollowTo:(NSInteger)index
+{
+    [self labelText:index];
+}
+- (void)labelText:(NSInteger)dex
+{
+    DataModel * model = [dataArray safetyObjectAtIndex:dex];
+    if (![self.titleLabel.text isEqualToString:model.title]) {
+        self.titleLabel.text = model.title;
+    }
+    if (![self.decLabel.text isEqualToString:model.dec]) {
+        self.decLabel.text = model.dec;
     }
 }
 

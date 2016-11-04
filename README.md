@@ -43,9 +43,11 @@ NSLog(@"点击了:%ld Item",index);
 NSLog(@"即将以:%ld Item为中心",index);
 
 }
-```
-```
 
+简单吧....
+```
+```
+以下为FWZoomCollectionView.h文件.
 @class FWZoomCollectionView;
 
 @protocol FWZoomCollectionViewDatasource <NSObject>

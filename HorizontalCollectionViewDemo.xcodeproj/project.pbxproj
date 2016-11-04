@@ -25,11 +25,8 @@
 		07B113EB1C916E0500C8B414 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B113D61C916E0500C8B414 /* 7.png */; };
 		07B113EC1C916E0500C8B414 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B113D71C916E0500C8B414 /* 8.png */; };
 		07B113ED1C916E0500C8B414 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B113D91C916E0500C8B414 /* DataModel.m */; };
-		07B113EE1C916E0500C8B414 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B113DB1C916E0500C8B414 /* NSArray+Extension.m */; };
-		07B113EF1C916E0500C8B414 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B113DD1C916E0500C8B414 /* UIColor+HexString.m */; };
-		07B113F01C916E0500C8B414 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B113DF1C916E0500C8B414 /* UIView+Extension.m */; };
-		07B113F11C916E0500C8B414 /* WJMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B113E11C916E0500C8B414 /* WJMCollectionViewCell.m */; };
-		07B113F21C916E0500C8B414 /* WJMCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B113E31C916E0500C8B414 /* WJMCollectionViewFlowLayout.m */; };
+		20BBB2C71DCC384D00140CDB /* FWZoomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BBB2C61DCC384D00140CDB /* FWZoomCollectionView.m */; };
+		20BBB2CB1DCC38CB00140CDB /* FWZoomCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BBB2CA1DCC38CB00140CDB /* FWZoomCollectionViewFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,16 +74,10 @@
 		07B113D71C916E0500C8B414 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		07B113D81C916E0500C8B414 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		07B113D91C916E0500C8B414 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
-		07B113DA1C916E0500C8B414 /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
-		07B113DB1C916E0500C8B414 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
-		07B113DC1C916E0500C8B414 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
-		07B113DD1C916E0500C8B414 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
-		07B113DE1C916E0500C8B414 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		07B113DF1C916E0500C8B414 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		07B113E01C916E0500C8B414 /* WJMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJMCollectionViewCell.h; sourceTree = "<group>"; };
-		07B113E11C916E0500C8B414 /* WJMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJMCollectionViewCell.m; sourceTree = "<group>"; };
-		07B113E21C916E0500C8B414 /* WJMCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJMCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		07B113E31C916E0500C8B414 /* WJMCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJMCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		20BBB2C51DCC384D00140CDB /* FWZoomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWZoomCollectionView.h; sourceTree = "<group>"; };
+		20BBB2C61DCC384D00140CDB /* FWZoomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWZoomCollectionView.m; sourceTree = "<group>"; };
+		20BBB2C91DCC38CA00140CDB /* FWZoomCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWZoomCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		20BBB2CA1DCC38CB00140CDB /* FWZoomCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWZoomCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +128,7 @@
 		07B1139B1C916DB800C8B414 /* HorizontalCollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				20BBB2C41DCC383B00140CDB /* FWZoomCollectionView */,
 				07B1139F1C916DB800C8B414 /* AppDelegate.h */,
 				07B113A01C916DB800C8B414 /* AppDelegate.m */,
 				07B113A21C916DB800C8B414 /* ViewController.h */,
@@ -152,16 +144,6 @@
 				07B113D71C916E0500C8B414 /* 8.png */,
 				07B113D81C916E0500C8B414 /* DataModel.h */,
 				07B113D91C916E0500C8B414 /* DataModel.m */,
-				07B113DA1C916E0500C8B414 /* NSArray+Extension.h */,
-				07B113DB1C916E0500C8B414 /* NSArray+Extension.m */,
-				07B113DC1C916E0500C8B414 /* UIColor+HexString.h */,
-				07B113DD1C916E0500C8B414 /* UIColor+HexString.m */,
-				07B113DE1C916E0500C8B414 /* UIView+Extension.h */,
-				07B113DF1C916E0500C8B414 /* UIView+Extension.m */,
-				07B113E01C916E0500C8B414 /* WJMCollectionViewCell.h */,
-				07B113E11C916E0500C8B414 /* WJMCollectionViewCell.m */,
-				07B113E21C916E0500C8B414 /* WJMCollectionViewFlowLayout.h */,
-				07B113E31C916E0500C8B414 /* WJMCollectionViewFlowLayout.m */,
 				07B113A51C916DB800C8B414 /* Main.storyboard */,
 				07B113A81C916DB800C8B414 /* Assets.xcassets */,
 				07B113AA1C916DB800C8B414 /* LaunchScreen.storyboard */,
@@ -195,6 +177,17 @@
 				07B113C31C916DB800C8B414 /* Info.plist */,
 			);
 			path = HorizontalCollectionViewDemoUITests;
+			sourceTree = "<group>";
+		};
+		20BBB2C41DCC383B00140CDB /* FWZoomCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				20BBB2C51DCC384D00140CDB /* FWZoomCollectionView.h */,
+				20BBB2C61DCC384D00140CDB /* FWZoomCollectionView.m */,
+				20BBB2C91DCC38CA00140CDB /* FWZoomCollectionViewFlowLayout.h */,
+				20BBB2CA1DCC38CB00140CDB /* FWZoomCollectionViewFlowLayout.m */,
+			);
+			path = FWZoomCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,15 +329,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B113EF1C916E0500C8B414 /* UIColor+HexString.m in Sources */,
-				07B113F21C916E0500C8B414 /* WJMCollectionViewFlowLayout.m in Sources */,
 				07B113A41C916DB800C8B414 /* ViewController.m in Sources */,
-				07B113EE1C916E0500C8B414 /* NSArray+Extension.m in Sources */,
-				07B113F01C916E0500C8B414 /* UIView+Extension.m in Sources */,
 				07B113ED1C916E0500C8B414 /* DataModel.m in Sources */,
+				20BBB2CB1DCC38CB00140CDB /* FWZoomCollectionViewFlowLayout.m in Sources */,
 				07B113A11C916DB800C8B414 /* AppDelegate.m in Sources */,
+				20BBB2C71DCC384D00140CDB /* FWZoomCollectionView.m in Sources */,
 				07B1139E1C916DB800C8B414 /* main.m in Sources */,
-				07B113F11C916E0500C8B414 /* WJMCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +560,7 @@
 				07B113C81C916DB800C8B414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07B113C91C916DB800C8B414 /* Build configuration list for PBXNativeTarget "HorizontalCollectionViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +569,7 @@
 				07B113CB1C916DB800C8B414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07B113CC1C916DB800C8B414 /* Build configuration list for PBXNativeTarget "HorizontalCollectionViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +578,7 @@
 				07B113CE1C916DB800C8B414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

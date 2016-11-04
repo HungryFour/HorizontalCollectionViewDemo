@@ -257,6 +257,7 @@
 				TargetAttributes = {
 					07B113981C916DB800C8B414 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BB5VK42K87;
 					};
 					07B113B11C916DB800C8B414 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -475,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BB5VK42K87;
 				INFOPLIST_FILE = HorizontalCollectionViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snwjm.HorizontalCollectionViewDemo;
@@ -486,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BB5VK42K87;
 				INFOPLIST_FILE = HorizontalCollectionViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.snwjm.HorizontalCollectionViewDemo;
